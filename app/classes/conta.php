@@ -11,7 +11,7 @@ abstract class Conta
     private $operacoes;
     private $ativa;
 
-    public function __construct(int $id, double $saldo, string $dataAbertura, int $tipo, string $operacoes, is $ativa)
+    public function __construct(int $id, int $saldo, string $dataAbertura, int $tipo, string $operacoes, is $ativa)
     {
         $this->id = $id;
         $this->saldo = $saldo;
@@ -21,20 +21,11 @@ abstract class Conta
         $this->ativa = $ativa;
     }
 
-    public function efetuarSaque()
-    {
+    public function efetuarSaque(int $valor) {}
 
-    }
+    public function efetuarDeposito(int $valor) {}
 
-    public function efetuarDeposito()
-    {
-
-    }
-
-    public function registrarOpercacao()
-    {
-
-    }
+    public function registrarOpercacao() {}
 
     public function setId($id)
     {
@@ -78,7 +69,7 @@ abstract class Conta
 
     public function setOperacacoes($operacacoes)
     {
-        return $this->operacacoes = $operacacoes;
+        return $this->operacoes = $operacacoes;
     }
 
     public function getOperacacoes()

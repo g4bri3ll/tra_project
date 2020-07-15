@@ -8,23 +8,22 @@ class Cliente
     private $id;
     private $nome;
     private $cpf;
-    private $conta;
+    public $conta;
 
-    public function __construct(int $id, String $nome, int $cpf, object $conta)
+    public function __construct(int $id, String $nome, string $cpf, ContaCorrente $conta)
     {
         $this->id = $id;
         $this->nome = $nome;
         $this->cpf = $cpf;
-        $this->conta = new ContaCorrente();
+        $this->conta = $conta;
     }
 
-    public function abrirConta(): String
+    public function abrirConta(): string
     {
-        echo "Conta aberta";
-
+        return "Conta aberta";
     }
 
-    public function fechaConta(): String
+    public function fechaConta(): string
     {
         return "Conta fechada";
     }
@@ -57,16 +56,6 @@ class Cliente
     public function getCpf()
     {
         return $this->cpf;
-    }
-
-    public function setConta($conta)
-    {
-        return $this->id = $id;
-    }
-
-    public function getConta()
-    {
-        return $this->conta;
     }
 
 }
